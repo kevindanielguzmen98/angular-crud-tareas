@@ -1,0 +1,18 @@
+<div class="card">
+	<div class="card-content text-center">
+		<span class="card-title center-align">Añadir tarea</span>
+		<form novalidate #frmCreacionTarea="ngForm" (ngSubmit)="agregar(frmCreacionTarea)" class="center-align">
+			<div class="row">
+				<div class="input-field col s12">
+					<input type="text" id="txt-titulo" #titulo="ngModel" ngModel name="titulo" maxlength="100" required [class.invalid]="titulo.errors?.required && titulo.touched">
+					<label for="txt-titulo">Titulo</label>
+				</div>
+				<div class="input-field col s12">
+					<textarea name="descripcion" id="txta-descripcion" class="materialize-textarea" [class.invalid]="descripcion.errors?.required && descripcion.touched"  #descripcion="ngModel" ngModel required></textarea>
+					<label for="txta-descripcion">Descripción</label>
+				</div>
+			</div>
+			<button type="submit" class="btn red" [disabled]="frmCreacionTarea.invalid">Añadir</button>
+		</form>
+	</div>
+</div>

@@ -1,0 +1,15 @@
+<nav>
+	<div class="nav-wrapper blue">
+		<a class="brand-logo center">Gestión de tareas</a>
+	</div>
+</nav>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col s12 m6">
+  		<app-anadir-tarea [tareas]="tareas" (agregarTarea)="agregarTarea($event)"></app-anadir-tarea>
+		</div>
+		<div class="col s12 m6">
+			<app-tareas [tareas]="tareas" (cargarTareas)="cargarTareas($event)" (eliminarTarea)="eliminarTarea($event)" (actualizarTarea)="actualizarTarea($event)" ></app-tareas>
+		</div>
+	</div>
+</div>
